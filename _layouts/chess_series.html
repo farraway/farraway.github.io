@@ -1,0 +1,71 @@
+---
+layout: post
+---
+<style>
+section#playlist footer {
+    clear: both;
+    margin: 1em;
+}
+section header {
+    clear: both;
+    font-size: 1.2em;
+    font-style: italic;
+    text-align: left;
+    word-spacing: 16em;
+}
+
+section#playlist div {
+    position: relative;
+    float: right;
+    margin: 0; padding: 0;
+    width: 80%; height: 0;
+    padding-top: 50%;
+    overflow: hidden;
+    border: 3px solid black;
+    border-radius: 3px;
+}
+
+section#playlist div iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+
+section#posts {
+    clear: both;
+}
+
+</style>
+{{ content }}
+<section id="playlist">
+    <header>
+        <h2>Playlist</h2>
+    </header>
+    <div class="playlist">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list={{page.youtube}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</section>
+<section id="posts">
+    <header>
+        <h2>Posts</h2>
+    </header>
+    <ul class="post-list">
+    {% assign season_posts = site.posts | where: "season",page.season | where: "layout","chess_video" %}
+    {% for post in season_posts %}
+        <li>
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            <span class="post-meta">{{ post.date | date: date_format }}</span>
+            <img src="{{ post.image | relative_url }}" style="float: left; width: 20%; margin: 1ex; border: 2px solid black; border-radius: 2px; background-color: Teal; padding: 1ex;">
+            <h3>
+                <a class="post-link" href="{{ post.url | relative_url }}">
+                    {{ post.title | escape }}
+                </a>
+            </h3>
+            {%- if site.show_excerpts -%}
+            {{ post.excerpt }}
+            {%- endif -%}
+        </li>
+    {%- endfor -%}
+    </ul>
+</section>
+

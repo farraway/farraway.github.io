@@ -1,0 +1,31 @@
+title: Farraway
+email: feedback@farraway.io
+description: >
+    Posting (or streaming) Chess videos and studies.
+exclude:
+  - CNAME
+  - README.md
+  - Makefile
+google_analytics: UA-98369998-1
+show_excerpts: true # set to true to show excerpts on the homepage
+minima:
+  date_format: "%b %-d, %Y"
+  social_links:
+    twitter: DSFarraway
+    github:  farraway
+    rss: rss
+    # facebook: jekyll
+    # flickr:   jekyll
+    # instagram: jekyll
+    # pinterest: jekyll
+    # youtube: ChessFarraway
+    youtube_channel: UCKPlzfrQpyI6FV-GMrjr84g
+    # youtube_channel_name: CloudCannon
+header_pages:
+ - about.md
+ - chess.md
+ - shop.md
+theme: minima
+plugins:
+ - jekyll-feed
+ - jekyll-seo-tag

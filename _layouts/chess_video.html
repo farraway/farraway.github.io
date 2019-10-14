@@ -1,0 +1,62 @@
+---
+layout: post
+---
+<style>
+section#video_and_study footer {
+    clear: both;
+    margin: 1em;
+}
+section#video_and_study header {
+    font-size: 1.2em;
+    font-style: italic;
+    text-align: center;
+    word-spacing: 16em;
+}
+
+section#video_and_study div {
+    position: relative;
+    float: left;
+    margin: 0; padding: 0;
+    width: 48%; height: 0;
+    padding-top: 27%;
+    overflow: hidden;
+    border: 3px solid black;
+    border-radius: 3px;
+}
+
+section#video_and_study div.study {
+    position: relative;
+    float: right;
+}
+
+section#video_and_study div iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+
+section#video_and_study div.study a {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+</style>
+{% assign season_post = site.posts | where: "season",page.season | where: "layout","chess_series" | first %}
+<em>[&nbsp;Season: <a href="{{ season_post.url }}">{{ season_post.title }}</a>&nbsp]</em>
+<section id="video_and_study">
+    <header>Video Study</header>
+    <div class="video">
+        <iframe src="https://www.youtube.com/embed/{{page.youtube}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="study">
+        <iframe src="https://lichess.org/study/embed/{{page.lichess}}" frameborder="0"></iframe>
+        <a href="https://lichess.org/study/{{page.lichess}}"><img src="/assets/transparent.png"></a>
+    </div>
+    <footer>
+        &nbsp;
+    </footer>
+</section>
+
+{{ content }}
