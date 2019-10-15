@@ -1,7 +1,14 @@
 ---
-layout: post
+layout: default
 ---
 <style>
+p.post-meta {
+    margin: 0; padding: 0;
+    text-align: center;
+    font-size: Smaller;
+    font-style: Italic;
+}
+
 section#playlist footer {
     clear: both;
     margin: 1em;
@@ -36,6 +43,18 @@ section#posts {
 }
 
 </style>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        {{ page.date | date: date_format }}
+      </time>
+      (Category: <a href="/chess/">Chess</a>)
+    </p>
+    <img src="{{ page.image | absolute_url }}" style="float: left; width: 20%; margin-right: 1ex; border: 3px solid DarkSlateGray; border-radius: 4px; background-color: {{page.imageBorder}}; padding: 1ex;">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+  </header>
 {{ content }}
 <section id="playlist">
     <header>
@@ -50,21 +69,9 @@ section#posts {
         <h2>Posts</h2>
     </header>
     <ul class="post-list">
-    {% assign season_posts = site.posts | where: "season",page.season | where: "layout","chess_video" %}
+    {% assign season_posts = site.categories.chess_episode | where: "season",page.season | sort: 'date' %}
     {% for post in season_posts %}
-        <li>
-            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-            <span class="post-meta">{{ post.date | date: date_format }}</span>
-            <img src="{{ post.image | relative_url }}" style="float: left; width: 20%; margin: 1ex; border: 2px solid black; border-radius: 2px; background-color: Teal; padding: 1ex;">
-            <h3>
-                <a class="post-link" href="{{ post.url | relative_url }}">
-                    {{ post.title | escape }}
-                </a>
-            </h3>
-            {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
-            {%- endif -%}
-        </li>
+        {%- include post_preview.html -%}
     {%- endfor -%}
     </ul>
 </section>

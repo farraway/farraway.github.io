@@ -1,5 +1,5 @@
 ---
-layout: chess_video
+layout: lichess_game
 title: Masters S1E1 - Thompson vs Morphy, 1857
 image: /assets/posts/masters_s1e1_thompson_morhpy_1856/morphy_lowenthal_1858.jpg
 imageBorder: ForestGreen

@@ -10,7 +10,7 @@ permalink: /chess/
     </header>
     <ul class="post-list">
     {% for series in series_set %}
-        {% assign post = site.categories.chess_episode| where: "series",series | last %}
+        {% assign post = site.categories.chess_episode| where: "series",series | first %}
         {%- include post_preview.html %}
     {%- endfor -%}
     </ul>
