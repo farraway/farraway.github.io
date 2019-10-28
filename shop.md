@@ -17,6 +17,9 @@ section.items section {
     margin-left: 10%;
 }
 </style>
+<p style="font-style: Italic; text-align: center;">
+As an Amazon Associate I earn from qualifying purchases.
+</p>
 <nav id="top">
     <ul>
         <li><a href="#chess">Chess Equipment</a></li>
