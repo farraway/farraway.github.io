@@ -1,5 +1,5 @@
 ---
-title: "Teapigs Camomile (50 bags)"
+title: "Glass Teapot Tea Kettle"
 category: shop
 department: tea
 ---
@@ -10,8 +10,8 @@ amzn_assoc_ad_type = "smart";
 amzn_assoc_marketplace = "amazon";
 amzn_assoc_region = "US";
 amzn_assoc_design = "enhanced_links";
-amzn_assoc_asins = "B00KH0KY72";
+amzn_assoc_asins = "B07PHYB5B1";
 amzn_assoc_placement = "adunit";
-amzn_assoc_linkid = "e3213cecef828c38b444d274bb5bcde9";
+amzn_assoc_linkid = "420883a3c581b550dce258c30b37c115";
 </script>
 <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
